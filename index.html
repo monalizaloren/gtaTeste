@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de Navegação</title>
+    <!-- Adicione a linha abaixo para incluir a biblioteca FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=Passion+One&family=Poppins:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@200;300;500&family=Poppins:wght@500&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        select {
+            background-color: black;
+            color: white;
+            border: none;
+
+        }
+
+        option {
+            background-color: black;
+            color: white;
+        }
+
+        /* Adicione as seguintes propriedades para centralizar os itens */
+        nav ul {
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .rockstargames-modules-core-headerfe08980c15b4c9d647ad67b3e69df46c {
+            background-image: url('./assets/images/Captura\ de\ tela\ 2024-01-08\ 150120.png');
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            border: none;
+            cursor: pointer;
+            margin: 20px;
+        }
+
+        .rockstargames-modules-core-headerae86867dea4ec0a8cdea5642f4c291d3 {
+            padding-left: 20px;
+            width: 250px;
+            height: 200px;
+        }
+
+        /* Adicione estilos para os botões adicionais */
+       
+        .btPesquisa,
+        .btUsuario {
+            background-color: black;
+            border: none;
+            cursor: pointer;
+        }
+        .btBuyNow{
+            border: solid 1px #fff;
+            background-color: black;
+            color: white;
+            font-family: 'League Gothic', sans-serif;
+            font-size: 17px;
+            letter-spacing: 2px;
+            padding: 10px;
+            width: 150px;
+        }
+        .btBuyNow:hover {
+            background-color: #fff;
+            color: #000000;
+            border: solid 1px #000000;
+        }
+
+        /* Estilo para o ícone de lupa */
+        .btPesquisa {
+            background-image: url('./assets/images/902006563577748c7d58ac9c2bf5e6df.svg');
+            width: 30px;
+            height: 30px;
+            background-size: cover;
+        }
+
+        /* Estilo para o ícone de perfil */
+        .btUsuario {
+            background-image: url('./assets/images/perfil.svg');
+            width: 30px;
+            height: 30px;
+            background-size: cover;
+        }
+
+        .itensMenuDireito {
+            display: flex;
+            gap: 30px;
+            margin: 20px;
+        }
+
+        li {
+            margin: 0 15px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        li::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+
+        li:hover::before {
+            width: 100%;
+        }
+
+        .linha {
+            width: 100%;
+            background-color: gray;
+            height: 1px;
+        }
+
+        .barraPreta {
+            background: linear-gradient(180deg, transparent 60%, rgba(0, 0, 0, .65) 75%, var(--black-200) 90%);
+            bottom: -1px;
+            top: unset;
+        }
+
+        .classPrimeiraSection {
+            width: 100%;
+            height: 800px;
+            background-image: linear-gradient(to right, rgb(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+                url('./assets/images/bgPrimeiraSection.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .iconesGTA {
+            display: flex;
+            width: 150px;
+            gap: 50px;
+            left: 90px;
+            top: 50px;
+            position: relative;
+        }
+
+        .primeiroTexto {
+            color: white;
+            font-size: 45px;
+            width: 600px;
+            margin: 80px;
+            font-family: 'League Gothic', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .segundoTexto {
+            color: white;
+            font-size: 25px;
+            width: 600px;
+            left: 80px;
+            position: relative;
+            bottom: 60px
+        }
+
+        .botoes {
+            margin-left: 80px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .btBotoes {
+            background: var(--black-15);
+            font-size: 24px;
+            height: 70px;
+            border: 1px solid #fff;
+            font-family: 'League Gothic', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            bottom: 50px;
+            position: relative;
+            color: #fff;
+            width: 300px;
+        }
+        .headerDegrade{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #635374, #7f6b95, #b7808d, #d99992);
+            height: 65px;
+            width: 100%;
+        }
+        .textoHeader{
+            color: white;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 19px;
+            letter-spacing: 2px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            nav{
+                display: none;
+            }
+            h2{
+                
+            }
+            .primeiroTexto{
+             
+            }
+            .headerDegrade{
+                width: 170%;
+                height: 250%;
+            }
+            .classPrimeiraSection{
+                width: 170%;
+            }
+            .segundoTextoP{
+                
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="headerDegrade">
+        <a href="www.youtube.com.br" class="textoHeader">
+            ASSISTA AO TRAILER 1 DE GRAND THEFT AUTO VI AGORA</a>
+    </div>
+    <nav >
+        <div class="logo-container">
+            <div class="rockstargames-modules-core-headerc5182c35b0d08cbfd5c48a29103c987d">
+                <button type="button" class="rockstargames-modules-core-headerfe08980c15b4c9d647ad67b3e69df46c"
+                    aria-label="Click to open menu">
+                    <div class="rockstargames-modules-core-headerc5182c35b0d08cbfd5c48a29103c987d"></div>
+                </button>
+            </div>
+            <img class="rockstargames-modules-core-headerae86867dea4ec0a8cdea5642f4c291d3" alt="gta-v"
+                src="https://media-rockstargames-com.akamaized.net/mfe6/prod/__common/img/732efc56393d89076732e76b0a2b55b2.svg">
+        </div>
+        <ul>
+            <li>Overview</li>
+            <li>
+                <select>
+                    <option value="gtaOnline">GTA Online</option>
+                </select>
+            </li>
+            <li>
+                <select>
+                    <option value="story">Story</option>
+                </select>
+            </li>
+            <li>GTA+</li>
+            <li>More</li>
+        </ul>
+        <div class="itensMenuDireito">
+            <button class="btBuyNow">COMPRE AGORA</button>
+            <button class="btPesquisa"></button>
+            <button class="btUsuario"></button>
+        </div>
+    </nav>
+
+    <div class="linha"></div>
+
+    <section id="primeiraSection">
+        <div class="classPrimeiraSection">
+            <div class="iconesGTA">
+                <img src="./assets/images/imgGTA1.svg" class="imgGTA">
+                <img src="./assets/images/imgGTA2.svg" class="imgGTA">
+            </div>
+            <div class="primeiroTexto">
+                <h2>Agora disponível para PS5 e Xbox Series X|S</h2>
+            </div>
+            <div class="segundoTexto">
+                <p class="segundoTextoP">Experiência blockbusters de entretenimento, Grand Theft Auto V e GTA Online.</p>
+            </div>
+            <div class="botoes">
+                <button class="btBotoes">ASSISTA AO TRAILER</button>
+                <button class="btBotoes">COMPRE AGORA</button>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>
